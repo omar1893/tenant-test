@@ -6,8 +6,10 @@ import config from './config.js';
 import endPoints from './endpoints/index.js';
 
 import isLogged from './middleware/logged.js';
+import cors from 'cors'
 
 const app = express();
+app.use(cors())
 app.use(bodyParser.json());
 
 app.post('/login', endPoints.login);
